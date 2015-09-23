@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5bf65162-d95c-0410-8c33-d00845abb90c++1262",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "5bf65162-d95c-0410-8c33-d00845abb90c++1262" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "341804CFA9C4A409AADF772CE8E2749135E66F22" : 0,
+    "5bf65162-d95c-0410-8c33-d00845abb90c++1262" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C80CD980-21B1-449C-8541-4245351F611C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "341804CFA9C4A409AADF772CE8E2749135E66F22" : "",
+    "5bf65162-d95c-0410-8c33-d00845abb90c++1262" : "FantaStick.xcodeproj\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Culdesac49\/Fantastick.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "341804CFA9C4A409AADF772CE8E2749135E66F22"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn+ssh:\/\/vc.tml.hut.fi\/srv\/svn\/koala",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5bf65162-d95c-0410-8c33-d00845abb90c++1262"
+    }
+  ]
+}
