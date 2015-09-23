@@ -162,7 +162,7 @@ void rot13(char *str)
 {
 	orientation orient = [GLView orientation];
 
-	int a, b;
+	int a, b, c;
 	BOOL allEnded = YES;
 	for(UITouch *touch in touches) {
 		// UITouch* is persistent thru touch, transform pointer to unique number
@@ -231,18 +231,22 @@ void rot13(char *str)
 		CGFloat radius = fv ? [fv floatValue] : 0.0f;
 
 		NSString *str;
+        
+        c = [touches count];
 		
 		if (isAreaDataEnabled) {
-			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %f", prefix,
+			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %f %d", prefix,
 						 a = touchOffsetX + lrintf(loc.x),
 						 b = touchOffsetY + lrintf(loc.y),
 						 nID + 1,
-						 radius];
+						 radius,
+                         c];
 		} else {
-			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d", prefix,
+			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %d", prefix,
 				   a = touchOffsetX + lrintf(loc.x),
 				   b = touchOffsetY + lrintf(loc.y),
-				   nID + 1];
+				   nID + 1,
+                   c];
 		}
 
 		[transport send: str];
