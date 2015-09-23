@@ -569,6 +569,12 @@ char buffer[BUFFERMAXLEN+4];
 	} else
 	if(strncmp(cmd, "area 1", 6) == 0) {
 		[FantaStickViewController setAreaData: YES];
+    } else
+    if(strncmp(cmd, "nbfingers 0", 11) == 0) {
+        [FantaStickViewController setNbFingers: NO];
+    } else
+    if(strncmp(cmd, "nbfingers 1", 11) == 0) {
+        [FantaStickViewController setNbFingers: YES];
 	}
 }
 

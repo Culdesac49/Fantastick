@@ -39,6 +39,8 @@
 
 + (void) setTouchOffset: (int)x Y: (int)y;
 + (void) setAreaData: (BOOL) b;
++ (void) setNbFingers: (BOOL) c;
+
 
 @property (nonatomic, retain) id glview;
 

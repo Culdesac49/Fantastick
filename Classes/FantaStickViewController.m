@@ -16,6 +16,8 @@
 int touchOffsetX = 0;
 int touchOffsetY = 0;
 BOOL isAreaDataEnabled = NO;
+BOOL isNbFingersEnabled = NO;
+
 
 @synthesize glview;
 
@@ -234,20 +236,31 @@ void rot13(char *str)
         
         c = [touches count];
 		
-		if (isAreaDataEnabled) {
+		if ((isAreaDataEnabled) && (isNbFingersEnabled)) {
 			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %f %d", prefix,
-						 a = touchOffsetX + lrintf(loc.x),
-						 b = touchOffsetY + lrintf(loc.y),
-						 nID + 1,
-						 radius,
-                         c];
-		} else {
+                   a = touchOffsetX + lrintf(loc.x),
+                   b = touchOffsetY + lrintf(loc.y),
+                   nID + 1,
+                   radius,
+                   c];
+        } else if(isAreaDataEnabled) {
+            str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %f", prefix,
+                   a = touchOffsetX + lrintf(loc.x),
+                   b = touchOffsetY + lrintf(loc.y),
+                   nID + 1,
+                   radius];
+		} else if(isNbFingersEnabled) {
 			str	= [[NSString alloc] initWithFormat: @"%c %d %d %d %d", prefix,
 				   a = touchOffsetX + lrintf(loc.x),
 				   b = touchOffsetY + lrintf(loc.y),
 				   nID + 1,
                    c];
-		}
+        } else{
+            str	= [[NSString alloc] initWithFormat: @"%c %d %d %d", prefix,
+                   a = touchOffsetX + lrintf(loc.x),
+                   b = touchOffsetY + lrintf(loc.y),
+                   nID + 1];
+        }
 
 		[transport send: str];
 		[str release];
@@ -277,6 +290,11 @@ void rot13(char *str)
 + (void) setAreaData: (BOOL) b
 {
 	isAreaDataEnabled = b;
+}
+
++ (void) setNbFingers:(BOOL)c
+{
+    isNbFingersEnabled = c;
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event

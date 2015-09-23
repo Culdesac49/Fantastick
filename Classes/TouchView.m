@@ -316,6 +316,16 @@ void swapf(float *a, float *b)
 			}
 			continue;
 		}
+        
+        if (count == 2 && [cmd isEqualToString: @"nbfingers"]) {
+            int state = [[i objectAtIndex: 1] intValue];
+            if (state == 0) {
+                [FantaStickViewController setNbFingers: NO];
+            } else if (state == 1) {
+                [FantaStickViewController setNbFingers: YES];
+            }
+            continue;
+        }
 		
 	} while(false);
 
