@@ -59,6 +59,7 @@ static float cameraRotate[4];
 	position[0] = 0.0f;
 	position[1] = 0.0f;
 	position[2] = 0.0f;
+    layer = 0.0f;
 	lineWidth = 1.0f;
 
 	isPositionSet = NO;
@@ -170,14 +171,20 @@ static float cameraRotate[4];
 		}
 		isPositionSet = YES;
 	} else
-	if(strncmp(a, "width ", 6) == 0) {
+	if(strncmp(a, "layer ", 6) == 0) {
 		a += 6;
 		if(!a)
 			return;
-		lineWidth = atof(a);
-		if(lineWidth < 1.0f)
-			lineWidth = 1.0f;
+		layer = atof(a);
 	} else
+    if(strncmp(a, "width ", 6) == 0) {
+        a += 6;
+        if(!a)
+            return;
+        lineWidth = atof(a);
+        if(lineWidth < 1.0f)
+            lineWidth = 1.0f;
+    } else
 	if(strncmp(a, "image ", 6) == 0) {
 		a += 6;
 		if(!a)

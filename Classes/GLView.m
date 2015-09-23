@@ -327,7 +327,14 @@ static orientation currentOrientation = portrait;
 	glEnableClientState(GL_VERTEX_ARRAY);
 
 	@synchronized(models) {
-		NSArray *glmodels = [models allValues];
+		NSArray *glmodelsunsorted = [models allValues];
+        
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"layer" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptors];
+        NSArray *glmodels;
+        glmodels = [glmodelsunsorted sortedArrayUsingDescriptors:sortDescriptors];
+        
 		if(!clearRequested) {
 			// DRAW opaque objects
 			glDepthMask(GL_TRUE);

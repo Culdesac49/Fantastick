@@ -19,6 +19,7 @@
 	GLfloat rotate[4];
 	GLfloat scale[3];
 	GLfloat position[3];
+    GLfloat layer;
 	GLfloat lineWidth;
 
 	BOOL isPositionSet;
