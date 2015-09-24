@@ -248,11 +248,12 @@ static orientation currentOrientation = portrait;
 	[web stringByEvaluatingJavaScriptFromString: s];
 }
 
--(void)touch: (char) type x: (int) xpos y: (int) ypos num: (int) finger radius: (float) rad
+-(void)touch: (char) type x: (int) xpos y: (int) ypos num: (int) finger radius: (float) rad nb_fing: (int) nb_f
 {
-	NSString *s = [NSString stringWithFormat: @"touch('%c', %d, %d, %d, %f);", type, xpos, ypos, finger, rad];
-	[self doJS: s];
+    NSString *s = [NSString stringWithFormat: @"touch('%c', %d, %d, %d, %f, %d);", type, xpos, ypos, finger, rad, nb_f];
+    [self doJS: s];
 }
+
 
 -(void)accelxacc: (double)x yacc: (double)y zacc: (double)z;
 {
@@ -326,12 +327,11 @@ static orientation currentOrientation = portrait;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnableClientState(GL_VERTEX_ARRAY);
 
-	@synchronized(models) {
-		NSArray *glmodelsunsorted = [models allValues];
-        
+	@synchronized(models) {        
+        NSArray *glmodelsunsorted = [models allValues];
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"layer" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptors];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         NSArray *glmodels;
         glmodels = [glmodelsunsorted sortedArrayUsingDescriptors:sortDescriptors];
         
