@@ -13,7 +13,7 @@
 	<key>CFBundleIconFile~ipad</key>
 	<string>icon-72</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.pinktwins.Fantastick2</string>
+	<string>com.pinktwins.Fantastick2.LMA</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
