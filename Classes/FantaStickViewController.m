@@ -266,7 +266,7 @@ void rot13(char *str)
 		[str release];
 		
 		if([(GLView*)glview jsActive]) {
-			[glview touch: prefix x: a y: b num: nID + 1 radius: radius];
+			[glview touch: prefix x: a y: b num: nID + 1 radius: radius nb_fing: c ];
 		}
 	}
 
