@@ -37,6 +37,7 @@ typedef enum { portrait, left, right } orientation;
 
 	// Hold GLModels
 	NSMutableDictionary* models;
+    NSArray* modelsarray;
 	NSMutableDictionary* models_clearqueue;
 	
 	// JS
