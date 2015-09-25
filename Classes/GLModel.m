@@ -351,16 +351,15 @@ static float cameraRotate[4];
 	orientation o = [GLView orientation];
 	if (o == left) {
 		glRotatef(270.0f, 0.0f, 0.0f, 1.0f);
-		glTranslatef(-130.0f, -130.0f, 0.0f);
+		glTranslatef(-128.0f, -128.0f, 0.0f);
 	} else if (o == right) {
 		glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
-		glTranslatef(-130.0f, -130.0f, 0.0f);
+		glTranslatef(-128.0f, -127.0f, 0.0f);
 	}
-	
 	// go 1:1 screen mapping with magic numbers
-	glTranslatef(-384.0f, 512.0f, -747.1f);
+	glTranslatef(-383.5f, 511.5f, -746.2f);
 	glRotatef(0.0, 0.0, 0.0, 1.0);
-	glScalef(1.0f, -1.001f, 1.0f);
+	glScalef(1.0f, -1.0f, 1.0f);
 }
 
 - (void) sendTexture
