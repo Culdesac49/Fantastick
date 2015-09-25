@@ -311,7 +311,7 @@ static orientation currentOrientation = portrait;
     glViewport(0, 0, rect.size.width, rect.size.height);
 
 	glEnable(GL_BLEND);
-	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glMatrixMode(GL_MODELVIEW); 
 	glShadeModel(GL_FLAT);
